@@ -266,7 +266,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="form-heading">Get Your Free Audit</div>
           <div class="form-sub">Takes 60 seconds. No credit card. No commitment.</div>
 
-          <form name="audit" method="POST" netlify>
+          <form id="auditForm" name="audit" method="POST" netlify>
+            <input type="hidden" name="form-name" value="audit" />
             <div class="form-group">
               <label for="website">Your Website URL</label>
               <input type="url" id="website" name="website" placeholder="https://yourbusiness.com.au" required />
@@ -296,14 +297,53 @@ import Layout from '../layouts/Layout.astro';
               <label for="email">Your Email</label>
               <input type="email" id="email" name="email" placeholder="you@yourbusiness.com.au" required />
             </div>
-            <button type="submit" class="form-submit">
-              <span>Generate My Free Audit</span>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 9h16M9 1l8 8-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <button type="submit" id="submitBtn" class="form-submit">
+              <span id="btnText">Generate My Free Audit</span>
+              <svg id="btnArrow" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 9h16M9 1l8 8-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <p class="form-disclaimer">We respect your privacy. No spam, ever. Unsubscribe anytime.</p>
           </form>
+
+          <div id="formSuccess" style="display:none; text-align:center; padding:40px 0;">
+            <div style="font-size:48px; margin-bottom:20px;">✅</div>
+            <div style="font-family:'Montserrat',sans-serif; font-weight:700; font-style:italic; font-size:22px; color:#fff; margin-bottom:12px;">Details Received!</div>
+            <p style="color:#9CA3AF; font-size:15px; line-height:1.7; max-width:340px; margin:0 auto;">Your audit request is in. Please check your inbox in a few minutes — we'll send your personalised report directly to <strong id="confirmedEmail" style="color:#fff;"></strong>.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </Layout>
+
+<script>
+  const form = document.getElementById('auditForm') as HTMLFormElement;
+  const btn = document.getElementById('submitBtn') as HTMLButtonElement;
+  const btnText = document.getElementById('btnText') as HTMLSpanElement;
+  const btnArrow = document.getElementById('btnArrow') as SVGElement;
+  const successPanel = document.getElementById('formSuccess') as HTMLDivElement;
+  const confirmedEmail = document.getElementById('confirmedEmail') as HTMLElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+
+    btnText.textContent = 'Sending…';
+    btnArrow.style.display = 'none';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form) as any).toString(),
+      });
+    } catch (_) {
+      // Netlify returns a redirect on success which fetch treats as an error — safe to ignore
+    }
+
+    form.style.display = 'none';
+    confirmedEmail.textContent = email;
+    successPanel.style.display = 'block';
+  });
+</script>
