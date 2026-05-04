@@ -1,49 +1,309 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout
+  title="Stryde Marketing — Grow Your Local Business Online"
+  description="Stryde Marketing helps local businesses dominate search, build stunning websites, and grow with smart digital marketing. Get your free AI-powered audit today."
+>
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span></span>
+            AI-Powered Marketing for Local Business
+          </div>
+          <h1>
+            Stop Losing Customers<br />
+            to Competitors Who<br />
+            <em>Rank Above You.</em>
+          </h1>
+          <p class="hero-sub">
+            Stryde helps local businesses dominate search results, build high-converting websites, and grow with smart digital marketing — all under one roof.
+          </p>
+          <div class="hero-actions">
+            <a href="#audit" class="btn-primary">
+              Get My Free AI Audit
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#services" class="btn-secondary">See How It Works</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-pill"><span class="dot"></span> No lock-in contracts</div>
+            <div class="trust-pill"><span class="dot"></span> Local business specialists</div>
+            <div class="trust-pill"><span class="dot"></span> Strategy before retainer</div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <div class="metric-card">
+              <div class="mc-label">Your Free Audit Covers</div>
+              <ul class="audit-preview-list">
+                <li><span class="apl-check">✓</span> Local SEO visibility &amp; Google Business Profile</li>
+                <li><span class="apl-check">✓</span> Website speed &amp; technical health</li>
+                <li><span class="apl-check">✓</span> Keyword gaps vs. local competitors</li>
+                <li><span class="apl-check">✓</span> Top quick-win opportunities</li>
+                <li><span class="apl-check">✓</span> Prioritised action plan</li>
+              </ul>
+            </div>
+            <div class="metric-card">
+              <div class="mc-label">Built for businesses like</div>
+              <div class="industry-tags">
+                <span>Trades &amp; Services</span>
+                <span>Health &amp; Allied</span>
+                <span>Home Improvement</span>
+                <span>Hospitality</span>
+                <span>Professional Services</span>
+              </div>
+            </div>
+            <div class="metric-card" style="background: rgba(42,99,255,0.08); border-color: rgba(42,99,255,0.25);">
+              <div class="mc-label" style="color: #93c5fd;">Ready to start?</div>
+              <div style="font-family:'Montserrat',sans-serif; font-weight:700; font-style:italic; font-size:20px; color:#fff; margin-bottom:6px;">Get your free audit today</div>
+              <div style="font-size:13px; color:#6B7280;">No credit card. No commitment. Just clarity on where you stand.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROBLEM ─── -->
+  <section class="problem" id="problem">
+    <div class="container">
+      <div class="section-label">Sound Familiar?</div>
+      <h2>Your competitors are getting the calls.<br /><em>You should be.</em></h2>
+      <p class="problem-lead">Most local businesses are invisible online — not because their work isn't great, but because nobody showed them how to be found.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">🔍</div>
+          <h4>You don't show up on Google</h4>
+          <p>When someone searches for your service in your suburb, a competitor appears. That call should have been yours.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">🌐</div>
+          <h4>Your website doesn't convert</h4>
+          <p>An outdated or slow site makes you look untrustworthy — visitors leave before they ever contact you.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">💸</div>
+          <h4>You're wasting money on ads</h4>
+          <p>Running Google Ads without a proper strategy burns budget fast and delivers little measurable return.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICES ─── -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">What We Do</div>
+        <h2>Everything You Need to<br /><em>Win Online</em></h2>
+        <p>Five proven services, one focused team, zero guesswork. We do what moves the needle for local businesses.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card featured">
+          <div class="service-icon">📍</div>
+          <div class="svc-tag">Most Popular</div>
+          <h3>Local SEO</h3>
+          <p>Dominate the Google Map Pack and local search results for your suburb and service area. Get found by customers who are ready to buy — right now.</p>
+          <ul class="service-features">
+            <li>Google Business Profile optimisation</li>
+            <li>Local citation building</li>
+            <li>Review strategy & management</li>
+            <li>Suburb-targeted landing pages</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <div class="svc-tag">Long-term Growth</div>
+          <h3>SEO</h3>
+          <p>Build sustainable organic traffic that compounds over time. We research what your customers search for and make sure you're there when they look.</p>
+          <ul class="service-features">
+            <li>Technical SEO audits & fixes</li>
+            <li>Keyword strategy & content</li>
+            <li>Link authority building</li>
+            <li>Monthly performance reporting</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🖥️</div>
+          <div class="svc-tag">Fast & Modern</div>
+          <h3>Website Building</h3>
+          <p>High-converting, lightning-fast websites built for local businesses. Looks premium, loads fast, turns visitors into enquiries.</p>
+          <ul class="service-features">
+            <li>Mobile-first design</li>
+            <li>Core Web Vitals optimised</li>
+            <li>Lead capture built in</li>
+            <li>Ongoing support & updates</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services-grid-bottom">
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <div class="svc-tag">Fast Results</div>
+          <h3>Paid Search</h3>
+          <p>Google Ads that actually make money. We build, manage, and optimise campaigns so every dollar works harder — no waste, no guesswork.</p>
+          <ul class="service-features">
+            <li>Google Ads setup & management</li>
+            <li>Conversion tracking</li>
+            <li>Landing page optimisation</li>
+            <li>Monthly ROI reporting</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <div class="svc-tag">Future-Ready</div>
+          <h3>AI Implementation</h3>
+          <p>Put AI to work in your business. From automated follow-ups to AI-powered content, we help you move faster and do more with less.</p>
+          <ul class="service-features">
+            <li>AI chatbot & lead qualification</li>
+            <li>Automated review responses</li>
+            <li>Content generation workflows</li>
+            <li>Reporting & insights automation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHY STRYDE ─── -->
+  <section class="results" id="why">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Why Stryde</div>
+        <h2>Built Different,<br /><em>on Purpose</em></h2>
+        <p>We're not a big agency with a hundred clients. We're a focused team that works specifically with local businesses — and that changes everything.</p>
+      </div>
+
+      <div class="diff-grid">
+        <div class="diff-card">
+          <div class="diff-icon">🏡</div>
+          <h4>Specialists in local business</h4>
+          <p>We focus exclusively on local and small businesses. Our strategies are built for your market from the ground up — not watered-down versions of what works for enterprise brands.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🔓</div>
+          <h4>No lock-in contracts</h4>
+          <p>We earn your business month to month. If we're not delivering value, you're free to walk — no penalty clauses, no exit fees, no awkward conversations. We stay because the work speaks.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">📊</div>
+          <h4>Transparent reporting, always</h4>
+          <p>Every month you get a plain-English report showing exactly what we did, what moved, and what's next. No vanity metrics, no fluff — just a clear picture of your investment.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🧭</div>
+          <h4>Strategy before execution</h4>
+          <p>We don't start spending your budget until we understand your customers, your competition, and your goals. A clear strategy upfront means less waste and faster results.</p>
+        </div>
+      </div>
+
+      <div class="process-row">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h4>Free AI Audit</h4>
+          <p>We analyse your website, local presence, and competitors to identify the biggest growth opportunities.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h4>Custom Strategy</h4>
+          <p>A focused plan built specifically for your business, your suburb, and your budget — no cookie-cutter packages.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h4>We Execute</h4>
+          <p>Our team handles everything. You stay focused on running your business while we drive the traffic.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h4>You Grow</h4>
+          <p>Watch rankings climb, calls increase, and leads roll in. Monthly reports keep you in the loop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── AUDIT FORM ─── -->
+  <section class="audit" id="audit">
+    <div class="container">
+      <div class="audit-inner">
+        <div class="audit-copy">
+          <div class="section-label">Free AI-Powered Audit</div>
+          <h2>See Exactly What's<br /><em>Holding You Back</em></h2>
+          <p>Get a personalised, AI-generated report showing your biggest SEO gaps, local visibility issues, and the fastest wins available to your business — completely free.</p>
+          <ul class="audit-includes">
+            <li>
+              <span class="check">✓</span>
+              <span>Local SEO visibility score + competitor comparison</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Google Business Profile health check</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Website speed & technical SEO issues</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Top keyword opportunities in your area</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Prioritised action plan with quick wins</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="audit-form-wrap">
+          <div class="form-heading">Get Your Free Audit</div>
+          <div class="form-sub">Takes 60 seconds. No credit card. No commitment.</div>
+
+          <form name="audit" method="POST" netlify>
+            <div class="form-group">
+              <label for="website">Your Website URL</label>
+              <input type="url" id="website" name="website" placeholder="https://yourbusiness.com.au" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="business">Business Name</label>
+                <input type="text" id="business" name="business" placeholder="e.g. Smith Plumbing" required />
+              </div>
+              <div class="form-group">
+                <label for="suburb">Your Suburb</label>
+                <input type="text" id="suburb" name="suburb" placeholder="e.g. Ipswich" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="employees">Number of Employees</label>
+              <select id="employees" name="employees" required>
+                <option value="" disabled selected>Select team size</option>
+                <option value="1">Just me (1)</option>
+                <option value="2-5">Small team (2–5)</option>
+                <option value="6-15">Growing (6–15)</option>
+                <option value="16-50">Established (16–50)</option>
+                <option value="50+">Large business (50+)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="you@yourbusiness.com.au" required />
+            </div>
+            <button type="submit" class="form-submit">
+              <span>Generate My Free Audit</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 9h16M9 1l8 8-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="form-disclaimer">We respect your privacy. No spam, ever. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
