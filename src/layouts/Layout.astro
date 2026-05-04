@@ -98,7 +98,16 @@ const GA4_ID = "G-RSN3FTFXEL";
         justify-content: space-between;
         height: 68px;
       }
-      .nav-logo img { height: 44px; width: auto; }
+      .nav-logo-text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 22px;
+        color: var(--blue);
+        text-decoration: none;
+        letter-spacing: -0.01em;
+      }
+      .nav-logo-text:hover { color: var(--blue-dark); }
       .nav-links {
         display: flex;
         gap: 32px;
@@ -663,7 +672,15 @@ const GA4_ID = "G-RSN3FTFXEL";
         flex-wrap: wrap;
         gap: 24px;
       }
-      .footer-logo img { height: 36px; }
+      .footer-logo-text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+        letter-spacing: -0.01em;
+      }
       .footer-links {
         display: flex;
         gap: 28px;
@@ -704,13 +721,7 @@ const GA4_ID = "G-RSN3FTFXEL";
       <div class="container">
         <div class="nav-inner">
           <div class="nav-logo">
-            <a href="/">
-              <svg width="44" height="44" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat" font-size="32" font-weight="700" fill="#2A63FF">
-                  S
-                </text>
-              </svg>
-            </a>
+            <a href="/" class="nav-logo-text">STRYDE</a>
           </div>
           <ul class="nav-links">
             <li><a href="#services">Services</a></li>
@@ -732,20 +743,15 @@ const GA4_ID = "G-RSN3FTFXEL";
       <div class="container">
         <div class="footer-inner">
           <div class="footer-logo">
-            <svg width="36" height="36" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat" font-size="28" font-weight="700" fill="#fff">
-                S
-              </text>
-            </svg>
+            <a href="/" class="footer-logo-text">STRYDE</a>
           </div>
           <ul class="footer-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#why">Why Stryde</a></li>
             <li><a href="#audit">Free Audit</a></li>
-            <li><a href="mailto:hello@strydemarketing.com.au">Contact</a></li>
           </ul>
         </div>
-        <p class="footer-copy">© 2025 Stryde Marketing. All rights reserved. ABN: 48 557 715 713 &nbsp;|&nbsp; <a href="mailto:hello@strydemarketing.com.au" style="color: #4B5563; text-decoration: none;">hello@strydemarketing.com.au</a></p>
+        <p class="footer-copy">© 2025 Stryde Marketing. All rights reserved. ABN: 48 557 715 713</p>
       </div>
     </footer>
   </body>
